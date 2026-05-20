@@ -41,5 +41,26 @@ namespace quanlysinhvien
         {
 
         }
+
+        private void Form_QLSV_Load(object sender, EventArgs e)
+        {
+            UCSinhVien UCSinhVien = new UCSinhVien();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(UCSinhVien);
+        }
+
+        private void quảnLýLớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCLophoc UCLopHoc = new UCLophoc();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(UCLopHoc);
+        }
+
+        private void quảnLýSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCSinhVien UCSinhVien = new UCSinhVien();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(UCSinhVien);
+        }
     }
 }

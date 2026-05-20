@@ -29,6 +29,7 @@ namespace quanlysinhvien
             if(username == "leanhtuan7112@gmail.com" && password == "1500268")
             {
                 MessageBox.Show("Đăng nhập thành công");
+                Application.Run(new Form_QLSV());
             }
             else
             {
