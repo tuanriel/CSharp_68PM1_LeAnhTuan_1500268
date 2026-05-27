@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSINHVIEN" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-66E4JOF;Initial Catalog=QLSINHVIEN;Persist Security Info=True;User ID=sa" SettingsObjectName="quanlysinhvien.Properties.Settings" SettingsPropertyName="QLSINHVIENConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_LopHocs" Member="tbl_LopHocs">
+    <Type Name="tbl_LopHoc">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_LopHoc_tbl_SinhVien" Member="tbl_SinhViens" ThisKey="MaLop" OtherKey="MaLop" Type="tbl_SinhVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_SinhViens" Member="tbl_SinhViens">
+    <Type Name="tbl_SinhVien">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tbl_LopHoc_tbl_SinhVien" Member="tbl_LopHoc" ThisKey="MaLop" OtherKey="MaLop" Type="tbl_LopHoc" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

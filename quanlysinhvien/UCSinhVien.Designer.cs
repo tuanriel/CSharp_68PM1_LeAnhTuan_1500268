@@ -33,33 +33,33 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbo_lop = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_mssv = new System.Windows.Forms.TextBox();
+            this.txt_fullname = new System.Windows.Forms.TextBox();
+            this.dtp_birthday = new System.Windows.Forms.DateTimePicker();
+            this.cbo_gioitinh = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_refresh = new System.Windows.Forms.Button();
+            this.btn_editSV = new System.Windows.Forms.Button();
+            this.btn_addSV = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_delSV = new System.Windows.Forms.Button();
+            this.dgv_DSSV = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSV)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -107,20 +107,20 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Lớp:";
             // 
-            // comboBox2
+            // cbo_lop
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbo_lop.FormattingEnabled = true;
+            this.cbo_lop.Items.AddRange(new object[] {
             "68PM1 - Lớp 68PM1",
             "68PM2 - Lớp 68PM2",
             "68PM3 - Lớp 68PM3",
             "68PM4 - Lớp 68PM4",
             "68PM5 - Lớp 68PM5",
             "68PM6 - Lớp 68PM6"});
-            this.comboBox2.Location = new System.Drawing.Point(21, 502);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(505, 28);
-            this.comboBox2.TabIndex = 18;
+            this.cbo_lop.Location = new System.Drawing.Point(21, 502);
+            this.cbo_lop.Name = "cbo_lop";
+            this.cbo_lop.Size = new System.Drawing.Size(505, 28);
+            this.cbo_lop.TabIndex = 18;
             // 
             // label5
             // 
@@ -149,39 +149,39 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Họ và tên:";
             // 
-            // textBox2
+            // txt_mssv
             // 
-            this.textBox2.Location = new System.Drawing.Point(21, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(505, 26);
-            this.textBox2.TabIndex = 11;
+            this.txt_mssv.Location = new System.Drawing.Point(21, 71);
+            this.txt_mssv.Name = "txt_mssv";
+            this.txt_mssv.Size = new System.Drawing.Size(505, 26);
+            this.txt_mssv.TabIndex = 11;
             // 
-            // textBox3
+            // txt_fullname
             // 
-            this.textBox3.Location = new System.Drawing.Point(21, 175);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(505, 26);
-            this.textBox3.TabIndex = 12;
+            this.txt_fullname.Location = new System.Drawing.Point(21, 175);
+            this.txt_fullname.Name = "txt_fullname";
+            this.txt_fullname.Size = new System.Drawing.Size(505, 26);
+            this.txt_fullname.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // dtp_birthday
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(21, 287);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(505, 26);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dtp_birthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_birthday.Location = new System.Drawing.Point(21, 287);
+            this.dtp_birthday.Name = "dtp_birthday";
+            this.dtp_birthday.Size = new System.Drawing.Size(505, 26);
+            this.dtp_birthday.TabIndex = 13;
             // 
-            // comboBox1
+            // cbo_gioitinh
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbo_gioitinh.FormattingEnabled = true;
+            this.cbo_gioitinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 398);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(505, 28);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbo_gioitinh.Location = new System.Drawing.Point(21, 398);
+            this.cbo_gioitinh.Name = "cbo_gioitinh";
+            this.cbo_gioitinh.Size = new System.Drawing.Size(505, 28);
+            this.cbo_gioitinh.TabIndex = 14;
+            this.cbo_gioitinh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -204,14 +204,14 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbo_lop);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.txt_mssv);
+            this.groupBox1.Controls.Add(this.txt_fullname);
+            this.groupBox1.Controls.Add(this.dtp_birthday);
+            this.groupBox1.Controls.Add(this.cbo_gioitinh);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(19, 52);
             this.groupBox1.Name = "groupBox1";
@@ -220,38 +220,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sinh viên";
             // 
-            // button5
+            // btn_refresh
             // 
-            this.button5.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(297, 795);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(251, 74);
-            this.button5.TabIndex = 33;
-            this.button5.Text = "Làm mới";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_refresh.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_refresh.Location = new System.Drawing.Point(297, 795);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(251, 74);
+            this.btn_refresh.TabIndex = 33;
+            this.btn_refresh.Text = "Làm mới";
+            this.btn_refresh.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_editSV
             // 
-            this.button3.BackColor = System.Drawing.Color.Green;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(297, 704);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(251, 74);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_editSV.BackColor = System.Drawing.Color.Green;
+            this.btn_editSV.ForeColor = System.Drawing.Color.White;
+            this.btn_editSV.Location = new System.Drawing.Point(297, 704);
+            this.btn_editSV.Name = "btn_editSV";
+            this.btn_editSV.Size = new System.Drawing.Size(251, 74);
+            this.btn_editSV.TabIndex = 31;
+            this.btn_editSV.Text = "Sửa";
+            this.btn_editSV.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_addSV
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(19, 704);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(251, 74);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_addSV.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_addSV.ForeColor = System.Drawing.Color.White;
+            this.btn_addSV.Location = new System.Drawing.Point(19, 704);
+            this.btn_addSV.Name = "btn_addSV";
+            this.btn_addSV.Size = new System.Drawing.Size(251, 74);
+            this.btn_addSV.TabIndex = 30;
+            this.btn_addSV.Text = "Thêm";
+            this.btn_addSV.UseVisualStyleBackColor = false;
+            this.btn_addSV.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -280,67 +281,33 @@
             this.textBox1.Size = new System.Drawing.Size(495, 26);
             this.textBox1.TabIndex = 27;
             // 
-            // Column5
+            // btn_delSV
             // 
-            this.Column5.HeaderText = "Lớp";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
+            this.btn_delSV.BackColor = System.Drawing.Color.Red;
+            this.btn_delSV.ForeColor = System.Drawing.Color.White;
+            this.btn_delSV.Location = new System.Drawing.Point(19, 795);
+            this.btn_delSV.Name = "btn_delSV";
+            this.btn_delSV.Size = new System.Drawing.Size(251, 74);
+            this.btn_delSV.TabIndex = 32;
+            this.btn_delSV.Text = "Xóa";
+            this.btn_delSV.UseVisualStyleBackColor = false;
             // 
-            // Column4
+            // dgv_DSSV
             // 
-            this.Column4.HeaderText = "Ngày Sinh";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Giới Tính";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Họ và Tên";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã SV";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(19, 795);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(251, 74);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(582, 149);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1058, 720);
-            this.dataGridView1.TabIndex = 26;
+            this.dgv_DSSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DSSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSV,
+            this.HoTen,
+            this.GioiTinh,
+            this.NgaySinh,
+            this.MaLop});
+            this.dgv_DSSV.Location = new System.Drawing.Point(582, 149);
+            this.dgv_DSSV.Name = "dgv_DSSV";
+            this.dgv_DSSV.RowHeadersWidth = 62;
+            this.dgv_DSSV.RowTemplate.Height = 28;
+            this.dgv_DSSV.Size = new System.Drawing.Size(1058, 720);
+            this.dgv_DSSV.TabIndex = 26;
+            this.dgv_DSSV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSSV_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -348,9 +315,49 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1700, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1700, 36);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // MaSV
+            // 
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "Mã SV";
+            this.MaSV.MinimumWidth = 8;
+            this.MaSV.Name = "MaSV";
+            this.MaSV.Width = 150;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ và Tên";
+            this.HoTen.MinimumWidth = 8;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 150;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.MinimumWidth = 8;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Width = 150;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.MinimumWidth = 8;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 150;
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Lớp";
+            this.MaLop.MinimumWidth = 8;
+            this.MaLop.Name = "MaLop";
+            this.MaLop.Width = 150;
             // 
             // UCSinhVien
             // 
@@ -362,20 +369,21 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_refresh);
+            this.Controls.Add(this.btn_editSV);
+            this.Controls.Add(this.btn_addSV);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_delSV);
+            this.Controls.Add(this.dgv_DSSV);
             this.Controls.Add(this.menuStrip1);
             this.Name = "UCSinhVien";
             this.Size = new System.Drawing.Size(1700, 974);
+            this.Load += new System.EventHandler(this.UCSinhVien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,30 +396,30 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbo_lop;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_mssv;
+        private System.Windows.Forms.TextBox txt_fullname;
+        private System.Windows.Forms.DateTimePicker dtp_birthday;
+        private System.Windows.Forms.ComboBox cbo_gioitinh;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_refresh;
+        private System.Windows.Forms.Button btn_editSV;
+        private System.Windows.Forms.Button btn_addSV;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_delSV;
+        private System.Windows.Forms.DataGridView dgv_DSSV;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
     }
 }

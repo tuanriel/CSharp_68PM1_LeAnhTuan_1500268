@@ -95,6 +95,7 @@
             this.ucSinhVien1.Name = "ucSinhVien1";
             this.ucSinhVien1.Size = new System.Drawing.Size(1708, 969);
             this.ucSinhVien1.TabIndex = 0;
+            this.ucSinhVien1.Load += new System.EventHandler(this.ucSinhVien1_Load);
             // 
             // Form_QLSV
             // 

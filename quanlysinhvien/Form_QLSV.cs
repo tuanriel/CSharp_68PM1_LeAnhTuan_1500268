@@ -62,5 +62,10 @@ namespace quanlysinhvien
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(UCSinhVien);
         }
+
+        private void ucSinhVien1_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
