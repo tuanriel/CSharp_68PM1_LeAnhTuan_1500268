@@ -254,5 +254,20 @@ namespace quanlysinhvien
         private void groupBox1_Enter(object sender, EventArgs e)
         {
         }
+
+        private void btn_viewListSV_Click(object sender, EventArgs e)
+        {
+            string maLop  = txt_maLop.Text.Trim();
+            string tenLop = txt_tenLop.Text.Trim();
+
+            if (string.IsNullOrEmpty(maLop))
+            {
+                MessageBox.Show("Vui lòng chọn một lớp học trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            FormDSSVLop form = new FormDSSVLop(maLop, tenLop);
+            form.ShowDialog();
+        }
     }
 }

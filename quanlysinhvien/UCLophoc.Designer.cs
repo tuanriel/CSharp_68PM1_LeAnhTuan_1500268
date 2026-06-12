@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_next = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_tenLop = new System.Windows.Forms.TextBox();
             this.txt_ghichu = new System.Windows.Forms.TextBox();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
@@ -54,8 +55,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.button10 = new System.Windows.Forms.Button();
-            this.txt_tenLop = new System.Windows.Forms.TextBox();
+            this.btn_viewListSV = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSLopHoc)).BeginInit();
             this.SuspendLayout();
@@ -176,6 +176,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lớp học";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txt_tenLop
+            // 
+            this.txt_tenLop.Location = new System.Drawing.Point(14, 295);
+            this.txt_tenLop.Name = "txt_tenLop";
+            this.txt_tenLop.Size = new System.Drawing.Size(505, 26);
+            this.txt_tenLop.TabIndex = 20;
             // 
             // txt_ghichu
             // 
@@ -310,33 +317,27 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1696, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1696, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // button10
+            // btn_viewListSV
             // 
-            this.button10.BackColor = System.Drawing.Color.SteelBlue;
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(19, 866);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(526, 74);
-            this.button10.TabIndex = 39;
-            this.button10.Text = "Xem danh sách sinh viên";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // txt_tenLop
-            // 
-            this.txt_tenLop.Location = new System.Drawing.Point(14, 295);
-            this.txt_tenLop.Name = "txt_tenLop";
-            this.txt_tenLop.Size = new System.Drawing.Size(505, 26);
-            this.txt_tenLop.TabIndex = 20;
+            this.btn_viewListSV.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_viewListSV.ForeColor = System.Drawing.Color.White;
+            this.btn_viewListSV.Location = new System.Drawing.Point(19, 866);
+            this.btn_viewListSV.Name = "btn_viewListSV";
+            this.btn_viewListSV.Size = new System.Drawing.Size(526, 74);
+            this.btn_viewListSV.TabIndex = 39;
+            this.btn_viewListSV.Text = "Xem danh sách sinh viên";
+            this.btn_viewListSV.UseVisualStyleBackColor = false;
+            this.btn_viewListSV.Click += new System.EventHandler(this.btn_viewListSV_Click);
             // 
             // UCLophoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.btn_viewListSV);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_last);
             this.Controls.Add(this.btn_previous);
@@ -390,7 +391,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btn_viewListSV;
         private System.Windows.Forms.TextBox txt_ghichu;
         private System.Windows.Forms.TextBox txt_tenLop;
     }
