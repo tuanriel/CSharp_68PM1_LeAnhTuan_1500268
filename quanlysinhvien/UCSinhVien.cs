@@ -17,6 +17,8 @@ namespace quanlysinhvien
         public UCSinhVien()
         {
             InitializeComponent();
+            dgv_DSSV.AutoGenerateColumns = false;
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,8 +61,10 @@ namespace quanlysinhvien
         }
         public void LoadData()
         {
+            DatabaseDataContext db = new DatabaseDataContext();
             List<tbl_SinhVien> DSSV = db.tbl_SinhViens.ToList();
             dgv_DSSV.DataSource = DSSV;
+            
         }
         public void LoadDSLH4CBX() //Load dữ liệu cho combobox lớp học
         {
@@ -68,6 +72,32 @@ namespace quanlysinhvien
             cbo_lop.DataSource = DSLH;
             cbo_lop.DisplayMember = "tenlop";
             cbo_lop.ValueMember = "malop";
+        }
+
+        private void dgv_DSSV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgv_DSSV.Rows[e.RowIndex];
+            txt_mssv.Text = row.Cells[0].Value?.ToString() ?? "";
+            txt_fullname.Text = row.Cells[1].Value?.ToString() ?? "";
+            cbo_gioitinh.Text = row.Cells[2].Value?.ToString() ?? "";
+
+            if (row.Cells[3].Value != null)
+            {
+                string dateString = row.Cells[3].Value.ToString();
+                DateTime ngaySinhResult;
+                if (DateTime.TryParse(dateString, out ngaySinhResult))
+                    dtp_birthday.Value = ngaySinhResult;
+                else
+                    dtp_birthday.Value = DateTime.Now;
+            }
+            else
+            {
+                dtp_birthday.Value = DateTime.Now;
+            }
+
+            cbo_lop.Text = row.Cells[4].Value?.ToString() ?? "";
         }
     }
 }

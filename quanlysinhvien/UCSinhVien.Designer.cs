@@ -52,12 +52,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_delSV = new System.Windows.Forms.Button();
             this.dgv_DSSV = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSV)).BeginInit();
             this.SuspendLayout();
@@ -307,17 +307,8 @@
             this.dgv_DSSV.RowTemplate.Height = 28;
             this.dgv_DSSV.Size = new System.Drawing.Size(1058, 720);
             this.dgv_DSSV.TabIndex = 26;
+            this.dgv_DSSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSSV_CellClick);
             this.dgv_DSSV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSSV_CellContentClick);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1700, 36);
-            this.menuStrip1.TabIndex = 25;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // MaSV
             // 
@@ -358,6 +349,16 @@
             this.MaLop.MinimumWidth = 8;
             this.MaLop.Name = "MaLop";
             this.MaLop.Width = 150;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1700, 36);
+            this.menuStrip1.TabIndex = 25;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // UCSinhVien
             // 
