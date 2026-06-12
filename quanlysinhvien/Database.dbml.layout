@@ -2,23 +2,23 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Database">
   <DataContextMoniker Name="/DatabaseDataContext" />
   <nestedChildShapes>
-    <classShape Id="a1c5d577-630a-4099-8804-595f4b884170" absoluteBounds="2.75, 1.25, 2, 1.5785953776041666">
+    <classShape Id="2a5e54a1-647c-4459-bef0-8843b47f28c7" absoluteBounds="3, 1.125, 2, 1.7708968098958331">
       <DataClassMoniker Name="/DatabaseDataContext/tbl_LopHoc" />
       <nestedChildShapes>
-        <elementListCompartment Id="b3a78da1-18f6-484d-843e-518856009a4f" absoluteBounds="2.765, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="54454c23-91a0-40a2-a9c9-5f37188c352c" absoluteBounds="3.015, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="19fe9749-e909-45e0-8765-b0dff7491de8" absoluteBounds="3.625, 4, 2, 1.9631982421875">
+    <classShape Id="6dc59799-67c3-4b5f-a561-e0e87b304cca" absoluteBounds="4, 3.375, 2, 2.1554996744791666">
       <DataClassMoniker Name="/DatabaseDataContext/tbl_SinhVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="2364d4a1-90b2-4c59-bdda-ee02e6157293" absoluteBounds="3.64, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6d8b99a3-773e-4a94-a7f5-524b69a91c05" absoluteBounds="4.015, 3.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.1875 : 2.82859537760417); (4.1875 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 2.89589680989583); (4.5 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DatabaseDataContext/tbl_LopHoc/tbl_LopHoc_tbl_SinhVien" />
       <nodes>
-        <classShapeMoniker Id="a1c5d577-630a-4099-8804-595f4b884170" />
-        <classShapeMoniker Id="19fe9749-e909-45e0-8765-b0dff7491de8" />
+        <classShapeMoniker Id="2a5e54a1-647c-4459-bef0-8843b47f28c7" />
+        <classShapeMoniker Id="6dc59799-67c3-4b5f-a561-e0e87b304cca" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

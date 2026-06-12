@@ -62,9 +62,8 @@ namespace quanlysinhvien
         public void LoadData()
         {
             DatabaseDataContext db = new DatabaseDataContext();
-            List<tbl_SinhVien> DSSV = db.tbl_SinhViens.ToList();
+            List<tbl_SinhVien> DSSV = db.tbl_SinhViens.Where(x => x.IsDelete == false || x.IsDelete == null).ToList();
             dgv_DSSV.DataSource = DSSV;
-            
         }
         public void LoadDSLH4CBX() //Load dữ liệu cho combobox lớp học
         {
@@ -108,6 +107,55 @@ namespace quanlysinhvien
             {
                 MessageBox.Show("Không tìm thấy sinh viên có mã " + mssv + " để cập nhật!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btn_delSV_Click(object sender, EventArgs e)
+        {
+            string mssv = txt_mssv.Text;
+
+            if (string.IsNullOrEmpty(mssv))
+            {
+                MessageBox.Show("Vui lòng chọn sinh viên cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult choice = MessageBox.Show(
+                "Chọn loại xóa:\n• YES  → Xóa cứng (xóa vĩnh viễn khỏi CSDL)\n• NO   → Xóa mềm (ẩn khỏi danh sách)",
+                "Chọn loại xóa", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (choice == DialogResult.Cancel) return;
+
+            DatabaseDataContext db = new DatabaseDataContext();
+            tbl_SinhVien sv = db.tbl_SinhViens.SingleOrDefault(x => x.MaSV == mssv);
+
+            if (sv == null)
+            {
+                MessageBox.Show("Không tìm thấy sinh viên có mã " + mssv + "!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (choice == DialogResult.Yes)
+            {
+                // Xóa cứng
+                DialogResult confirm = MessageBox.Show(
+                    "Bạn có chắc chắn muốn xóa vĩnh viễn sinh viên \"" + sv.HoTen + "\"?",
+                    "Xác nhận xóa cứng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirm != DialogResult.Yes) return;
+
+                db.tbl_SinhViens.DeleteOnSubmit(sv);
+                db.SubmitChanges();
+                MessageBox.Show("Đã xóa vĩnh viễn sinh viên " + sv.HoTen + ".", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Xóa mềm — yêu cầu cột IsDeleted (bit, default 0) trong tbl_SinhViens
+                sv.IsDelete = true;
+                db.SubmitChanges();
+                MessageBox.Show("Đã ẩn sinh viên " + sv.HoTen + " khỏi danh sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            LoadData();
         }
 
         private void dgv_DSSV_CellClick(object sender, DataGridViewCellEventArgs e)

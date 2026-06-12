@@ -99,6 +99,8 @@ namespace quanlysinhvien
 		
 		private string _GhiChu;
 		
+		private bool _IsDelete;
+		
 		private EntitySet<tbl_SinhVien> _tbl_SinhViens;
 		
     #region Extensibility Method Definitions
@@ -113,6 +115,8 @@ namespace quanlysinhvien
     partial void OnTenLopChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
+    partial void OnIsDeleteChanging(bool value);
+    partial void OnIsDeleteChanged();
     #endregion
 		
 		public tbl_LopHoc()
@@ -201,6 +205,26 @@ namespace quanlysinhvien
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Bit NOT NULL")]
+		public bool IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_LopHoc_tbl_SinhVien", Storage="_tbl_SinhViens", ThisKey="MaLop", OtherKey="MaLop")]
 		public EntitySet<tbl_SinhVien> tbl_SinhViens
 		{
@@ -265,6 +289,8 @@ namespace quanlysinhvien
 		
 		private string _MaSV;
 		
+		private bool _IsDelete;
+		
 		private EntityRef<tbl_LopHoc> _tbl_LopHoc;
 		
     #region Extensibility Method Definitions
@@ -283,6 +309,8 @@ namespace quanlysinhvien
     partial void OnMaLopChanged();
     partial void OnMaSVChanging(string value);
     partial void OnMaSVChanged();
+    partial void OnIsDeleteChanging(bool value);
+    partial void OnIsDeleteChanged();
     #endregion
 		
 		public tbl_SinhVien()
@@ -411,6 +439,26 @@ namespace quanlysinhvien
 					this._MaSV = value;
 					this.SendPropertyChanged("MaSV");
 					this.OnMaSVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDelete", DbType="Bit NOT NULL")]
+		public bool IsDelete
+		{
+			get
+			{
+				return this._IsDelete;
+			}
+			set
+			{
+				if ((this._IsDelete != value))
+				{
+					this.OnIsDeleteChanging(value);
+					this.SendPropertyChanging();
+					this._IsDelete = value;
+					this.SendPropertyChanged("IsDelete");
+					this.OnIsDeleteChanged();
 				}
 			}
 		}

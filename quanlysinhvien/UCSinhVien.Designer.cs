@@ -292,6 +292,7 @@
             this.btn_delSV.TabIndex = 32;
             this.btn_delSV.Text = "Xóa";
             this.btn_delSV.UseVisualStyleBackColor = false;
+            this.btn_delSV.Click += new System.EventHandler(this.btn_delSV_Click);
             // 
             // dgv_DSSV
             // 
