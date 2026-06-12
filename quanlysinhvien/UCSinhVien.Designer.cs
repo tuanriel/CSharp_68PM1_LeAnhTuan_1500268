@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_last = new System.Windows.Forms.Button();
+            this.btn_previous = new System.Windows.Forms.Button();
+            this.btn_first = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cbo_lop = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.dtp_birthday = new System.Windows.Forms.DateTimePicker();
             this.cbo_gioitinh = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btn_next = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.btn_editSV = new System.Windows.Forms.Button();
@@ -71,32 +71,35 @@
             this.label7.TabIndex = 24;
             this.label7.Text = "Trang 1/1 | 3 bản ghi";
             // 
-            // button8
+            // btn_last
             // 
-            this.button8.Location = new System.Drawing.Point(1325, 887);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(114, 62);
-            this.button8.TabIndex = 38;
-            this.button8.Text = ">>";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_last.Location = new System.Drawing.Point(1325, 887);
+            this.btn_last.Name = "btn_last";
+            this.btn_last.Size = new System.Drawing.Size(114, 62);
+            this.btn_last.TabIndex = 38;
+            this.btn_last.Text = ">>";
+            this.btn_last.UseVisualStyleBackColor = true;
+            this.btn_last.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
+            // btn_previous
             // 
-            this.button7.Location = new System.Drawing.Point(693, 887);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(114, 62);
-            this.button7.TabIndex = 36;
-            this.button7.Text = "<";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_previous.Location = new System.Drawing.Point(693, 887);
+            this.btn_previous.Name = "btn_previous";
+            this.btn_previous.Size = new System.Drawing.Size(114, 62);
+            this.btn_previous.TabIndex = 36;
+            this.btn_previous.Text = "<";
+            this.btn_previous.UseVisualStyleBackColor = true;
+            this.btn_previous.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button6
+            // btn_first
             // 
-            this.button6.Location = new System.Drawing.Point(582, 887);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 62);
-            this.button6.TabIndex = 35;
-            this.button6.Text = "<<";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_first.Location = new System.Drawing.Point(582, 887);
+            this.btn_first.Name = "btn_first";
+            this.btn_first.Size = new System.Drawing.Size(114, 62);
+            this.btn_first.TabIndex = 35;
+            this.btn_first.Text = "<<";
+            this.btn_first.UseVisualStyleBackColor = true;
+            this.btn_first.Click += new System.EventHandler(this.button6_Click);
             // 
             // label6
             // 
@@ -192,14 +195,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã sinh viên:";
             // 
-            // button9
+            // btn_next
             // 
-            this.button9.Location = new System.Drawing.Point(1214, 887);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(114, 62);
-            this.button9.TabIndex = 37;
-            this.button9.Text = ">";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn_next.Location = new System.Drawing.Point(1214, 887);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(114, 62);
+            this.btn_next.TabIndex = 37;
+            this.btn_next.Text = ">";
+            this.btn_next.UseVisualStyleBackColor = true;
+            this.btn_next.Click += new System.EventHandler(this.button9_Click);
             // 
             // groupBox1
             // 
@@ -230,6 +234,7 @@
             this.btn_refresh.TabIndex = 33;
             this.btn_refresh.Text = "Làm mới";
             this.btn_refresh.UseVisualStyleBackColor = false;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // btn_editSV
             // 
@@ -265,6 +270,7 @@
             this.button1.TabIndex = 29;
             this.button1.Text = "Tìm";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -367,10 +373,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.btn_last);
+            this.Controls.Add(this.btn_previous);
+            this.Controls.Add(this.btn_first);
+            this.Controls.Add(this.btn_next);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_editSV);
@@ -395,9 +401,9 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_last;
+        private System.Windows.Forms.Button btn_previous;
+        private System.Windows.Forms.Button btn_first;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbo_lop;
         private System.Windows.Forms.Label label5;
@@ -408,7 +414,7 @@
         private System.Windows.Forms.DateTimePicker dtp_birthday;
         private System.Windows.Forms.ComboBox cbo_gioitinh;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.Button btn_editSV;

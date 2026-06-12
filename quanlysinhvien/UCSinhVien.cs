@@ -14,11 +14,15 @@ namespace quanlysinhvien
     {
 
         DatabaseDataContext db = new DatabaseDataContext();
+        private int currentPage = 1;
+        private readonly int pageSize = 10;
+        private int totalPages = 1;
+        private string searchKeyword = "";
+
         public UCSinhVien()
         {
             InitializeComponent();
             dgv_DSSV.AutoGenerateColumns = false;
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,8 +66,36 @@ namespace quanlysinhvien
         public void LoadData()
         {
             DatabaseDataContext db = new DatabaseDataContext();
-            List<tbl_SinhVien> DSSV = db.tbl_SinhViens.Where(x => x.IsDelete == false || x.IsDelete == null).ToList();
-            dgv_DSSV.DataSource = DSSV;
+            List<tbl_SinhVien> all = db.tbl_SinhViens
+                .Where(x => x.IsDelete == false || x.IsDelete == null)
+                .ToList();
+
+            string kw = searchKeyword.Trim().ToLower();
+            if (!string.IsNullOrEmpty(kw))
+            {
+                all = all.Where(x =>
+                    (x.MaSV  != null && x.MaSV.ToLower().Contains(kw))  ||
+                    (x.HoTen != null && x.HoTen.ToLower().Contains(kw)) ||
+                    (x.MaLop != null && x.MaLop.ToLower().Contains(kw))
+                ).ToList();
+            }
+
+            int totalRecords = all.Count;
+            totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+            if (totalPages < 1) totalPages = 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+
+            dgv_DSSV.DataSource = all
+                .Skip((currentPage - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            label7.Text = $"Trang {currentPage}/{totalPages} | {totalRecords} bản ghi";
+
+            btn_first.Enabled    = currentPage > 1;
+            btn_previous.Enabled = currentPage > 1;
+            btn_next.Enabled     = currentPage < totalPages;
+            btn_last.Enabled     = currentPage < totalPages;
         }
         public void LoadDSLH4CBX() //Load dữ liệu cho combobox lớp học
         {
@@ -183,6 +215,49 @@ namespace quanlysinhvien
             }
 
             cbo_lop.Text = row.Cells[4].Value?.ToString() ?? "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            searchKeyword = textBox1.Text;
+            currentPage = 1;
+            LoadData();
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            searchKeyword = "";
+            textBox1.Text = "";
+            currentPage = 1;
+            LoadData();
+        }
+
+        // << Trang đầu
+        private void button6_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            LoadData();
+        }
+
+        // < Trang trước
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1) currentPage--;
+            LoadData();
+        }
+
+        // > Trang tiếp
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages) currentPage++;
+            LoadData();
+        }
+
+        // >> Trang cuối
+        private void button8_Click(object sender, EventArgs e)
+        {
+            currentPage = totalPages;
+            LoadData();
         }
     }
 }
