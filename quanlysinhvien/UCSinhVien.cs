@@ -74,10 +74,47 @@ namespace quanlysinhvien
             cbo_lop.ValueMember = "malop";
         }
 
+        private void btn_editSV_Click(object sender, EventArgs e)
+        {
+            DatabaseDataContext db = new DatabaseDataContext();
+
+            txt_mssv.ReadOnly = true;
+            string mssv = txt_mssv.Text;
+            string hoten = txt_fullname.Text;
+            string gioitinh = cbo_gioitinh.Text;
+            DateTime ngaysinh = dtp_birthday.Value;
+            string malop = cbo_lop.SelectedValue?.ToString();
+
+            if (string.IsNullOrEmpty(mssv))
+            {
+                MessageBox.Show("Vui lòng chọn sinh viên cần cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            tbl_SinhVien sv = db.tbl_SinhViens.SingleOrDefault(x => x.MaSV == mssv);
+
+            if (sv != null)
+            {
+                sv.HoTen = hoten;
+                sv.NgaySinh = ngaysinh;
+                sv.GioiTinh = gioitinh;
+                sv.MaLop = malop;
+                db.SubmitChanges();
+
+                MessageBox.Show("Cập nhật thông tin sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy sinh viên có mã " + mssv + " để cập nhật!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void dgv_DSSV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
+            txt_mssv.ReadOnly = true;
             DataGridViewRow row = dgv_DSSV.Rows[e.RowIndex];
             txt_mssv.Text = row.Cells[0].Value?.ToString() ?? "";
             txt_fullname.Text = row.Cells[1].Value?.ToString() ?? "";

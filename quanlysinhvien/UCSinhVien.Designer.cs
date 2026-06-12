@@ -241,6 +241,7 @@
             this.btn_editSV.TabIndex = 31;
             this.btn_editSV.Text = "Sửa";
             this.btn_editSV.UseVisualStyleBackColor = false;
+            this.btn_editSV.Click += new System.EventHandler(this.btn_editSV_Click);
             // 
             // btn_addSV
             // 
