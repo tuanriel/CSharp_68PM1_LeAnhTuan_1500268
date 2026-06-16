@@ -226,6 +226,13 @@ namespace quanlysinhvien
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
+            txt_mssv.Text = "";
+            txt_mssv.ReadOnly = false;
+            txt_fullname.Text = "";
+            cbo_gioitinh.Text = "";
+            dtp_birthday.Value = DateTime.Now;
+            cbo_lop.Text = "";
+
             searchKeyword = "";
             textBox1.Text = "";
             currentPage = 1;
